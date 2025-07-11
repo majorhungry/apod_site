@@ -4,16 +4,38 @@ This pulls NASA's 'Astronomy Picture of the Day' and displays in a webpage with 
 
 **What You Need**
 
-NASA's API key in a .env file in the root of the project. You can get one for free at https://api.nasa.gov/
+NASA's API key in a .env file in the root of the project.
+You can get one for free at https://api.nasa.gov/
 ```
 nasa_api_key=INPUT_YOUR_API_KEY
 ```
 
 **How to Run?**
 
-Once you have created your .env file and installed the
-necessary dependency's run the main.py file 
+You will need to build the docker image and then run
+it. I have provided a docker compose file if you
+prefer to run it that way.
 
+Clone this repository
+```bash
+git clone https://github.com/majorhungry/apod_site.git
+```
+
+Build the docker image
+```bash
+docker build -t apodsite:1.0
+```
+
+Move the 'docker-compose.yml' file to where you want to
+run this container and store you '.env' file in the same
+directory as the compose file.
+
+```bash
+docker compose up -d
+```
+
+This will run the container and the site will be
+at http://localhost:8080 by default.
 
 **Inspiration**
 
@@ -22,5 +44,3 @@ better projects exit and do this better but this is mine.
 If you look NASA's dedicated page looks its very close to 
 what I made. https://apod.nasa.gov
 
-I do plan on making this into a docker image so it can
-be hosted. Just one thing at a time.

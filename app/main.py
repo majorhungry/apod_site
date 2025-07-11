@@ -31,4 +31,4 @@ def home():
 #This is creating a webpage at / and referencing the html file in this document and pulling the variables from the api pull
 #to fill in the parts of the site that change daily.
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=False)

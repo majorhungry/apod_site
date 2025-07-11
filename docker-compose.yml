@@ -1,0 +1,9 @@
+services:
+    app:
+      container_name: apod_site
+      image: apodsite:1.0
+      ports:
+        - "8080:8080"
+      env_file:
+        - .env
+      restart: unless-stopped
